@@ -1,0 +1,60 @@
+#### Copyright 2021 Boieriu Andrei-Teodor 312CA
+
+# Image_Editor
+
+Image_Editor is a C program that performs different actions on a RGB/Grayscale
+pnm image. (Black/White images are currently not supported)
+
+## Features
+
+* Load image
+* Set selection
+* Rotate selection
+* Crop selection
+* Apply effect
+* Save image
+
+## Compilation
+
+The code can be compiled with the provided makefile, using the "make" command
+
+## Execution
+
+The program can be run using "./image_editor"
+
+## Usage ([parameter] means parameter is optional)
+
+* Loading an image: LOAD <filename>
+
+- After loading an image, selection is automatically set to the whole image
+
+* Setting selection: SELECT ALL (to select the whole image)
+		     or
+		     SELECT <x1> <y1> <x2> <y2> (to select a specific zone)
+		     
+- Selection coordinates don't have to be in the right order
+
+* Rotating selection: ROTATE <angle>
+
+- Only multiples of 90 degrees between -360 degrees and 360 degrees are
+supported
+
+- Rectangular selections can't be rotated
+
+* Cropping selection: CROP
+
+* Applying effect: APPLY <effect>
+
+- Currently supported effects are: EDGE, SHARPEN, BLUR and GAUSSIAN_BLUR
+
+- Effects can only be applied on color images
+
+* Saving image: SAVE <filename> [ascii]
+
+- If the ascii parameter is present, the image will be saved as ascii,
+otherwise it will be saved as binary
+
+* Exiting the program: EXIT
+
+- Images are not automatically saved after exiting
+
